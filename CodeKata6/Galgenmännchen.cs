@@ -24,7 +24,7 @@ public class Galgenmännchen
     this.loesungswort = ErstelleInitialesLoesungswort(gesuchtesWort);
   }
 
-  private char[] ErstelleInitialesLoesungswort(string gesuchtesWort)
+  public char[] ErstelleInitialesLoesungswort(string gesuchtesWort)
   {
     char[] initialCharacters = new char[gesuchtesWort.Length];
     for (int i = 0; i < gesuchtesWort.Length; i++)

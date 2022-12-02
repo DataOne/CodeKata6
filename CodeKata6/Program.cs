@@ -25,7 +25,7 @@ var maxTries = 9;
 var tries = 0;
 
 var hangman = new Galgenmännchen(searchWord);
-var result = string.Empty;
+var result = string.Join("", hangman.ErstelleInitialesLoesungswort(searchWord));
 
 while (result != searchWord && tries <= maxTries)
 {
@@ -33,9 +33,14 @@ while (result != searchWord && tries <= maxTries)
   var guess = Console.ReadLine();
   if (!string.IsNullOrWhiteSpace(guess))
   {
-    tries++;
-    result = hangman.RateBuchstabe(guess[0]);
+    var newResult = hangman.RateBuchstabe(guess[0]);
+    if (result == newResult)
+    {
+      tries++;
+    }
+    result = newResult;
     Console.WriteLine(result);
+    Console.WriteLine("\n Fehlversuche: " + tries);
   }
 }
 
@@ -46,5 +51,6 @@ if (tries <= maxTries)
 else
 {
   Console.WriteLine("Schade! Das war leider nichts... :(");
+  Console.WriteLine(searchWord);
   Console.WriteLine(Galgenmännchen.DeadMan);
 }
