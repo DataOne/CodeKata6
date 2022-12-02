@@ -3,6 +3,7 @@
     public class Galgenmännchen
     {
         private readonly string gesuchtesWort;
+
         private string currentWort = "";
 
 
