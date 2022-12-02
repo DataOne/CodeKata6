@@ -1,3 +1,3 @@
 # CodeKata6
 
-Unsere 6. Code Kata
+Unsere 6. Code Kata 😎
